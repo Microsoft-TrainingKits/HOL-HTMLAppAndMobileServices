@@ -62,7 +62,7 @@ Estimated time to complete this lab: **45** minutes.
 ### Exercise 1: Building Your First Windows Azure Application ###
 
 <a name="Ex1Task1" />
-### Task 1- Create a New Mobile Service ###
+### Task 1 - Create a New Mobile Service ###
 Follow these steps to create a new mobile service.
 
 1. Log into the [Windows Azure Management Portal](https://manage.windowsazure.com) and navigate to Mobile Services.
@@ -132,7 +132,6 @@ This downloads the web site files for the sample To do list application that is 
 The final stage of this tutorial is to host and run your new app on your local computer.
 
 1. Browse to the location where you saved the compressed project files, expand the files on your computer, and launch one of the following command files from the **server** subfolder.
-
 	- launch-windows (Windows computers)
 	- launch-mac.command (Mac OS X computers)
 	- launch-linux.sh (Linux computers)
@@ -145,7 +144,7 @@ The final stage of this tutorial is to host and run your new app on your local c
 
 1. In the app, type meaningful text, such as _Complete the tutorial_, in **Enter new task**, and then click **Add**.
 
-	![Creating a New Task](images/creating-a-new-task.png?raw=true "Creating a New Task")
+	![Creating a New Task](Images/creating-a-new-task.png?raw=true "Creating a New Task")
 
 	_Creating a New Task_
 
@@ -155,12 +154,12 @@ The final stage of this tutorial is to host and run your new app on your local c
 
 1. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
 
-	![Mobile Services Data](images/mobile-services-data.png?raw=true "Mobile Services Data")
+	![Mobile Services Data](Images/mobile-services-data.png?raw=true "Mobile Services Data")
 
 	_Mobile Services Data_
 
 	This lets you browse the data inserted by the app into the table.
 
-	![TodoItems Table Data](images/todoitems-table-data.png?raw=true "TodoItems Table Data")
+	![TodoItems Table Data](Images/todoitems-table-data.png?raw=true "TodoItems Table Data")
 
 	_TodoItems Table Data_
