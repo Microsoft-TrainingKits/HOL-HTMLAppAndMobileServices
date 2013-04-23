@@ -26,9 +26,9 @@ In this hands-on lab, you will learn how to:
 The following is required to complete this hands-on lab:
 
 - One of the following Web Servers running on your computer:
-	- On Windows: [IIS Express](1).
-	- On MacOS X: Python, which should already be installed.
-	- On Linux: Python. You must install the latest version of Python.
+	- On **Windows**: [IIS Express](1).
+	- On **MacOS X**: Python, which should already be installed.
+	- On **Linux**: Python. You must install the latest version of Python.
 - A web browser that supports HTML5.
 - A Windows Azure subscription account that has the Windows Azure Mobile Services feature enabled
 
@@ -40,11 +40,11 @@ The following is required to complete this hands-on lab:
 <a name="Setup"/>
 ### Setup ###
 
-In order to execute the exercises in this hands-on lab you need to set up your environment.
+If you are performing this hands-on lab using Windows, you can follow these steps to check the dependencies. Otherwise, check the **Prerequisites** list above.
 
 1. Open a Windows Explorer window and browse to the lab’s **Source** folder.
 
-1. Execute the **Setup.cmd** file with Administrator privileges to launch the setup process that will configure your environment and install the Visual Studio code snippets for this lab.
+1. Execute the **Setup.cmd** file with Administrator privileges to launch the setup process that will configure your environment.
 
 1. If the User Account Control dialog is shown, confirm the action to proceed.
 
@@ -56,7 +56,111 @@ This hands-on lab includes the following exercises:
 
 1. [Building Your First Windows Azure Application](#Exercise1)
 
-Estimated time to complete this lab: **120** minutes.
+Estimated time to complete this lab: **45** minutes.
 
 <a name="Exercise1"></a>
 ### Exercise 1: Building Your First Windows Azure Application ###
+
+<a name="Ex1Task1" />
+### Task 1- Create a New Mobile Service ###
+Follow these steps to create a new mobile service.
+
+1. Log into the [Windows Azure Management Portal](https://manage.windowsazure.com) and navigate to Mobile Services.
+
+1. At the bottom of the navigation pane, click **+NEW**.
+
+	![New Button](Images/new-button.png?raw=true)
+
+	_New Button_
+
+1. Expand **Compute | Mobile Service**, then click **Create**.
+ 
+	![Creating a New Mobile Service](Images/creating-new-mobile-service.png?raw=true)
+ 
+	_Creating a new Mobile Service_
+
+	This displays the **New Mobile Service** dialog.
+
+1. In the **Create a mobile service** page, type a subdomain name for the new mobile service in the **URL** textbox and wait for name verification. Once name verification completes, click the right arrow button to go to the next page.
+ 
+	![New Mobile Service](Images/create-mobile-service-step-1.png?raw=true)
+
+	_New Mobile Service_
+
+	This displays the **Specify database settings** page.
+
+	> **Note:** As part of this tutorial, you create a new SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. If you already have a database in the same region as the new mobile service, you can instead chooseUse existing Databaseand then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.
+
+1. In **Name**, type the name of the new database, then type **Login name**, which is the administrator login name for the new SQL Database server, type and confirm the password, and click the check button to complete the process.
+ 
+	![Specifying Database Settings](Images/create-mobile-service-step-2.png?raw=true)
+
+	_Specifying Database Settings_
+
+	> **Note:**  When the password that you supply does not meet the minimum requirements or when there is a mismatch, a warning is displayed.  We recommend that you make a note of the administrator login name and password that you specify; you will need this information to reuse the SQL Database instance or the server in the future. You have now created a new mobile service that can be used by your mobile apps.
+
+You have now created a new mobile service that can be used by your mobile apps.
+
+<a name="Ex1Task2" />
+### Task 2 - Creating a New HTML App ###
+
+Once you have created your mobile service, you can follow an easy quickstart in the Management Portal to either create a new app or modify an existing app to connect to your mobile service.
+
+In this task you will create a new HTML app that is connected to your mobile service.
+
+1. In the Management Portal, click **Mobile Services**, and then click the mobile service that you just created.
+
+2. In the quickstart tab, click **Windows** under **Choose platform** and expand **Create a new HTML app**.
+
+	![New Mobile Service](Images/new-mobile-service.png?raw=true "New Mobile Service")
+
+	_New Mobile Service_
+
+3. This displays the three easy steps to create and host an HTML app connected to your mobile service. Click **Create TodoItems table** to create a table to store app data.
+
+	![Creating a New HTML App](Images/creating-a-new-html-app.png?raw=true "Creating a New HTML App")
+
+	_Creating a New HTML App_
+
+4. Under **Download and run application**, click **Download**.
+
+This downloads the web site files for the sample To do list application that is connected to your mobile service. Save the compressed file to your local computer, and make a note of where you save it.
+
+<a name="Ex1Task3" />
+### Task 3 - Hosting and Running your HTML App ###
+
+The final stage of this tutorial is to host and run your new app on your local computer.
+
+1. Browse to the location where you saved the compressed project files, expand the files on your computer, and launch one of the following command files from the **server** subfolder.
+
+	- launch-windows (Windows computers)
+	- launch-mac.command (Mac OS X computers)
+	- launch-linux.sh (Linux computers)
+
+	> **Note:** On a Windows computer, type `R` when PowerShell asks you to confirm that you want to run the script. Your web browser might warn you to not run the script because it was downloaded from the internet. When this happens, you must request that the browser proceed to load the script.
+
+	This starts a web server on your local computer to host the new app.
+
+1. Open the URL http://localhost:8000/ in a web browser to start the app.
+
+1. In the app, type meaningful text, such as _Complete the tutorial_, in **Enter new task**, and then click **Add**.
+
+	![Creating a New Task](images/creating-a-new-task.png?raw=true "Creating a New Task")
+
+	_Creating a New Task_
+
+	This sends a POST request to the new mobile service hosted in Windows Azure. Data from the request is inserted into the TodoItem table. Items stored in the table are returned by the mobile service, and the data is displayed in the second column in the app.
+
+	> **Note:** You can review the code that accesses your mobile service to query and insert data, which is found in the app.js file.
+
+1. Back in the Management Portal, click the **Data** tab and then click the **TodoItems** table.
+
+	![Mobile Services Data](images/mobile-services-data.png?raw=true "Mobile Services Data")
+
+	_Mobile Services Data_
+
+	This lets you browse the data inserted by the app into the table.
+
+	![TodoItems Table Data](images/todoitems-table-data.png?raw=true "TodoItems Table Data")
+
+	_TodoItems Table Data_
