@@ -175,4 +175,37 @@ The final stage of this tutorial is to host and run your new app on your local c
 <a name="Ex1Task4" />
 ### Task 4 - Exploring your App Code ###
 
-TBC
+In this task you will explore To Do list application code and see how simple the Windows Azure Mobile Services Client SDK makes it to interact with Windows Azure Mobile Services.
+
+1. Open **index.html** using a text editor. The files is located in the folder where you've expanded the application files.
+	
+	````HTML
+	<script src='//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js'></script>
+	<script src='https://todolist.azure-mobile.net/client/MobileServices.Web-1.0.0.min.js'></script>
+	<script src='app.js'></script>
+	````
+
+1. Open **app.js** using a text editor. Check the MobileServiceClient class. This is the key class provided by the client SDK that provides a way for your application to interact with Windows Azure Mobile Services. The first parameter in the constructor is the Mobile Service endpoint and the second parameter is the Application Key for your Mobile Service.
+
+	Additionally, the **getTable()** method creates a proxy object (todoItemTable) for the SQL Database TodoItem.
+ 
+	````JavaScript
+	$(function() {
+		var client = new WindowsAzure.MobileServiceClient('https://todolist.azure-mobile.net/', '[MOBILE-SERVICES-KEY]'),
+		todoItemTable = client.getTable('todoitem');
+		...
+	}
+	````
+
+1. Let's see to see how the mobile service client is then used for Inserts, Updates, Query operations. The **where()** function creates a query that is executed with the **read()** operation.
+
+	````JavaScript
+   function refreshTodoItems() {
+		var query = todoItemTable.where({ complete: false });
+
+		query.read().then(function(todoItems) { 
+			...
+		}
+	}
+	````
+
