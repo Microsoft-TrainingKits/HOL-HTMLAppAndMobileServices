@@ -62,7 +62,7 @@ This hands-on lab includes the following exercises:
 
 Estimated time to complete this lab: **45** minutes.
 
-<a name="Exercise1"></a>
+<a name="Exercise1" />
 ### Exercise 1: Creating Your First Mobile Service ###
 
 In this exercise use the quick start within the portal to quickly demonstrate the structured storage capability of Windows Azure Mobile services.
@@ -250,12 +250,15 @@ In this task you will explore ToDo list application code and see how simple the 
 
 ---
 
-<a name="Exercise2"></a>
+<a name="Exercise2"/>
 ### Exercise 2: Validate Data Using Server Scripts ###
 
 This exercise shows you how to leverage server scripts in Windows Azure Mobile Services. Server scripts are registered in a mobile service and can be used to perform a wide range of operations on data being inserted and updated, including validation and data modification. In this exercise, you will define and register server scripts that validate and modify data. Because the behavior of server side scripts often affects the client, you will also update your HTML app to take advantage of these new behaviors.
 
 This exercise requires that you've completed [Exercise 1](#Exercise1).
+
+>**Note:** For more information on server scripts check this [reference] (http://www.windowsazure.com/en-us/develop/mobile/how-to-guides/work-with-server-scripts/).
+
 
 <a name="Ex2Task1" />
 ###Task 1 - Adding Server-Side Validation###
@@ -279,6 +282,8 @@ It is always a good practice to validate the length of data that is submitted by
 
 	_Insert Operation Script_
 
+	> **Note:** You can remove a registered script on the **Script** tab by clicking **Clear** and then **Save**.
+
 1.	Replace the existing script with the following function, and then click **Save**. This script checks the length of the **TodoItem.text** property and sends an error response when the length exceeds 10 characters. Otherwise, the **execute** function is called to complete the insert.
 
 	````JavaScript
@@ -293,7 +298,7 @@ It is always a good practice to validate the length of data that is submitted by
 	}
 	````
 
-	> **Note:** You can remove a registered script on the **Script** tab by clicking **Clear** and then **Save**.
+	> **Note:** These scripts must call execute or respond to make sure that a response is returned to the client. When a script has a code path in which neither of these functions is invoked, the operation may become unresponsive. Additionally, notice that Mobile Services does not preserve state between script executions. Every time a script executes, a new global context is created in which for the script is executed.
 
 <a name="Ex2Task2" />
 ###Task 2 - Handling Validation Errors###
