@@ -322,7 +322,7 @@ Now that the mobile service is validating data and sending error responses, you 
 	});
 	````
 
-1. Run one of the following command files from the **server** subfolder of the project that you modified when you completed the previous exercise. This starts a web server on your local computer to host the app.
+1. Run one of the following command files from the **server** subfolder of the project that you modified when you completed Exercise 1. This starts a web server on your local computer to host the app.
 	-	**launch-windows** (Windows computers)
 	-	**launch-mac.command** (Mac OS X computers)
 	-	**launch-linux.sh** (Linux computers)
@@ -370,7 +370,11 @@ To be able to authenticate users, you must register your app with an identity pr
 	> **Note:** The provider-generated secret is an important security credential. Do not share this secret with anyone or distribute it with your app.
 
 4.	Back in the Management Portal, click the **Identity** tab, enter the app identifier and shared secret values obtained from your identity provider, and click **Save**.
- 
+
+	![Identity Settings](images/identity-settings.png?raw=true "Identity Settings")
+
+	_Identity Settings_
+
 Both your mobile service and your app are now configured to work with your chosen authentication provider.
 
 <a name="Ex1Task2" />
@@ -387,23 +391,26 @@ Both your mobile service and your app are now configured to work with your chose
 
 	_Table Permissions_
 
-3.	In the app directory, launch one of the following command files from the **server** subfolder. 	This starts a web server on your local computer to host the new app.
+3.	Run one of the following command files from the **server** subfolder of the project that you modified when you completed [Exercise 1](#Exercise1). 	This starts a web server on your local computer to host the new app.
 	-	**launch-windows** (Windows computers)
 	-	**launch-mac.command** (Mac OS X computers)
 	-	**launch-linux.sh** (Linux computers)
 
 	> **Note:** On a Windows computer, type `R` when PowerShell asks you to confirm that you want to run the script. Your web browser might warn you to not run the script because it was downloaded from the internet. When this happens, you must request that the browser proceed to load the script.
 
-1. Open the URL http://localhost:8000/ in a web browser to start the app. The data fails to load. This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
+1. Open the URL http://localhost:8000/ in a web browser to start the app. The data fails to load and the _Loading..._ message does not dissapear. This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
-1.	(Optional) Open the script debugger for your web browser and reload the page. Verify that an access denied error occurs.
+1.	Optionaly, you can open the script debugger for your web browser and reload the page. Verify that an access denied error occurs.
+
+	![Access is denied Error](images/access-is-denied-error.png?raw=true "Access is denied Error")
+	_Access is denied Error_
 
 Next, you will update the app to allow authentication before requesting resources from the mobile service.
 
 <a name="Ex1Task3" />
 ###Task 3 - Adding Authentication to the App###
 
-1.	Open the project file index.html, locate the H1 element and under it add the following code snippet:
+1.	Open the file **index.html** from the app, locate the **H1** element and under it add the following code snippet:
 
 	````HTML
 	<div id="logged-in">
@@ -460,7 +467,11 @@ Next, you will update the app to allow authentication before requesting resource
 
 	> **Note:** If you are using an identity provider other than Facebook, change the value passed to the login method above to one of the following: _microsoftaccount, facebook, twitter, or google_.
 
-1.	Go back to the browser where your app is running, and refresh the page. When you are successfully logged-in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+1.	Go back to the browser where your app is running, and refresh the page. When you are successfully logged in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+
+	![Logged in with Facebook](images/logged-in-with-facebook.png?raw=true "Logged in with Facebook")
+
+	_Logged in with Facebook_
 
 	> **Note:** When you use Internet Explorer, you may receive the error after login: _Cannot reach window opener. It may be on a different Internet Explorer zone._ This occurs because the pop-up runs in a different security zone (internet) from localhost (intranet). This only affects apps during development using localhost. As a workaround, open the Security tab of Internet Options, click Local Intranet, click Sites, and disable Automatically detect intranet network. Remember to change this setting back when you are done testing.
 
