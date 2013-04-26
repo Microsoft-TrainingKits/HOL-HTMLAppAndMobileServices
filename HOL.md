@@ -9,11 +9,11 @@ Windows Azure Mobile Services is a Windows Azure service offering designed to ma
 
 The following is a functional representation of the Mobile Services architecture.
 
-![Mobile Services Diagram](images/mobile-services-diagram.png?raw=true "Mobile Services Diagram")
+![Mobile Services Diagram](Images/mobile-services-diagram.png?raw=true "Mobile Services Diagram")
 
 _Mobile Services Diagram_
 
-This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service. You can view a video version of this tutorial by clicking the clip to the right.
+This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service.
 
 <a name="Objectives"></a>
 ### Objectives ###
@@ -69,7 +69,7 @@ In this exercise use the quick start within the portal to quickly demonstrate th
 
 A screenshot from the completed app is below:
 
-![completed-app](images/completed-app.png?raw=true "Completed HTML Application")
+![completed-app](Images/completed-app.png?raw=true "Completed HTML Application")
 
 
 <a name="Ex1Task1" />
@@ -98,7 +98,7 @@ Follow these steps to create a new mobile service.
 
 	This displays the **Specify database settings** page.
 
-	> **Note:** As part of this tutorial, you create a new SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. If you already have a database in the same region as the new mobile service, you can instead chooseUse existing Databaseand then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.
+	> **Note:** As part of this exercise, you create a new SQL Database instance and server. You can reuse this new database and administer it as you would any other SQL Database instance. If you already have a database in the same region as the new mobile service, you can instead chooseUse existing Databaseand then select that database. The use of a database in a different region is not recommended because of additional bandwidth costs and higher latencies.
 
 1. In **Name**, leave the default database name and select **New SQL database server**. Then type **Login name**, which is the administrator login name for the new SQL Database server, type and confirm the password, and click the check button to complete the process.
  
@@ -110,7 +110,7 @@ Follow these steps to create a new mobile service.
 
 Wait until the mobile servies is ready. You have now created a new mobile service that can be used by your mobile apps.
 
-![Mobile Service Ready](images/mobile-service-ready.png?raw=true "Mobile Service Ready")
+![Mobile Service Ready](Images/mobile-service-ready.png?raw=true "Mobile Service Ready")
 
 _Mobile Service Ready_
 
@@ -142,7 +142,7 @@ This downloads the web site files for the sample To do list application that is 
 <a name="Ex1Task3" />
 ### Task 3 - Hosting and Running your HTML App ###
 
-The final stage of this tutorial is to host and run your new app on your local computer.
+The final stage of this exercise is to host and run your new app on your local computer.
 
 1. Browse to the location where you saved the compressed project files, expand the files on your computer, and launch one of the following command files from the **server** subfolder, depending on your operating system.
 	- On **Windows**: launch-windows
@@ -155,11 +155,11 @@ The final stage of this tutorial is to host and run your new app on your local c
 
 1. Open the URL http://localhost:8000/ in a web browser to start the app.
 
-	![Running the App](images/running-the-app.png?raw=true "Running the App")
+	![Running the App](Images/running-the-app.png?raw=true "Running the App")
 
 	_Running the app_
 
-1. In the app, type meaningful text, such as _Complete the tutorial_, in **Enter new task**, and then click **Add**.
+1. In the app, type meaningful text, such as _Complete the hands-on lab_, in **Enter new task**, and then click **Add**.
 
 	![Creating a New Task](Images/creating-a-new-task.png?raw=true "Creating a New Task")
 
@@ -182,7 +182,7 @@ The final stage of this tutorial is to host and run your new app on your local c
 	_TodoItems Table Data_
 
 	>**Note:** Mobile Services simplifies the process of storing data in a SQL Database. By default, you don’t need to predefine the schema of tables in your database. Mobile Services automatically adds columns to a table based on the data you insert. To change this dynamic schema behavior, use the Dynamic Schema setting on the Configure tab. It is recommeded that you disable dynamic schema support before publicly releasing your app.
-![dynamic schema](images/dynamic-schema.png?raw=true "dynamic schema")
+![dynamic schema](Images/dynamic-schema.png?raw=true "dynamic schema")
 
 <a name="Ex1Task4" />
 ### Task 4 - Exploring your App Code ###
@@ -267,18 +267,18 @@ It is always a good practice to validate the length of data that is submitted by
 
 1.	Log into the [Windows Azure Management Portal] (https://manage.windowsazure.com/), click **Mobile Services**, and then click your app.
 
-	![Viewing the Mobile Services](images/viewing-the-mobile-services.png?raw=true "Viewing the Mobile Services")
+	![Viewing the Mobile Services](Images/viewing-the-mobile-services.png?raw=true "Viewing the Mobile Services")
 
 	_Viewing the Mobile Services_
 1.	Click the **Data** tab, then click the **TodoItem** table.
  
-	![Opening the Data Tab](images/opening-the-data-tab.png?raw=true "Opening the Data Tab")
+	![Opening the Data Tab](Images/opening-the-data-tab.png?raw=true "Opening the Data Tab")
 	
 	_Opening the Data Tab_
 
 1.	Click **Script**, then select the **Insert** operation.
  
-	![Insert Operation Script](images/insert-operation-script.png?raw=true "Insert Operation Script")
+	![Insert Operation Script](Images/insert-operation-script.png?raw=true "Insert Operation Script")
 
 	_Insert Operation Script_
 
@@ -331,7 +331,7 @@ Now that the mobile service is validating data and sending error responses, you 
 
 1.	In a web browser, navigate to http://localhost:8000/, then type text in _Add new task_ and click **Add**. Notice that the operation fails and error handling displays the error response in a dialog.
 
-	![Validation Message](images/validation-message.png?raw=true "Validation Message")
+	![Validation Message](Images/validation-message.png?raw=true "Validation Message")
 	_Validation Message_
 
 ---
@@ -339,7 +339,7 @@ Now that the mobile service is validating data and sending error responses, you 
 <a name="Exercise3"/>
 ### Exercise 3: Getting Started with Authentication ###
 
-This exercise shows you how to authenticate users in Windows Azure Mobile Services from your HTML app. In this tutorial, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
+This exercise shows you how to authenticate users in Windows Azure Mobile Services from your HTML app. In this exercise, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
 This exercise requires that you've completed [Exercise 1](#Exercise1).
 
@@ -350,11 +350,13 @@ To be able to authenticate users, you must register your app with an identity pr
 
 1.	Log on to the [Windows Azure Management Portal] (https://manage.windowsazure.com/), click **Mobile Services**, and then click your mobile service.
 
-		![Viewing the Mobile Services](images/viewing-the-mobile-services.png?raw=true "Viewing the Mobile Services")
+	![Viewing the Mobile Services](Images/viewing-the-mobile-services.png?raw=true "Viewing the Mobile Services")
+
+	_Viewing the Mobile Services_
 
 2.	Click the **Dashboard** tab and make a note of the **Site URL** value. You may need to provide this value to the identity provider when you register your app.
 
-	![Getting the Site URL](images/getting-the-site-url.png?raw=true "Getting the Site URL")
+	![Getting the Site URL](Images/getting-the-site-url.png?raw=true "Getting the Site URL")
 	
 	_Getting the Site URL_
 
@@ -376,8 +378,15 @@ Both your mobile service and your app are now configured to work with your chose
 
 1.	In the Management Portal, click the **Data** tab, and then click the **TodoItem** table.
  
+	![Opening the Table](Images/opening-the-table.png?raw=true "Opening the Table")
+	_Opening the Table_
+
 2.	Click the **Permissions** tab, set all permissions to **Only authenticated users**, and then click **Save**. This will ensure that all operations against the **TodoItem** table require an authenticated user.
  
+	![Table Permissions](Images/table-permissions.png?raw=true "Table Permissions")
+
+	_Table Permissions_
+
 3.	In the app directory, launch one of the following command files from the **server** subfolder. 	This starts a web server on your local computer to host the new app.
 	-	**launch-windows** (Windows computers)
 	-	**launch-mac.command** (Mac OS X computers)
@@ -394,8 +403,6 @@ Next, you will update the app to allow authentication before requesting resource
 <a name="Ex1Task3" />
 ###Task 3 - Adding Authentication to the App###
 
->**Note:** Because the login is performed in a popup, you should invoke the login method from a button's click event. Otherwise, many browsers will suppress the login window.
-
 1.	Open the project file index.html, locate the H1 element and under it add the following code snippet:
 
 	````HTML
@@ -411,7 +418,9 @@ Next, you will update the app to allow authentication before requesting resource
 
 	This enables you to login to Mobile Services from the page.
 
-1.	In the **app.js** file, locate the line of code at the very bottom of the file that calls to the refreshTodoItems function, and replace it with the following code.
+	>**Note:** Because the login is performed in a popup, you should invoke the login method from a button's click event. Otherwise, many browsers will suppress the login window.
+
+1.	In the **app.js** file, locate the line of code at the very bottom of the file that calls to the **refreshTodoItems** function, and replace it with the following code. 
 
 	````JavaScript
 	function refreshAuthDisplay() {
