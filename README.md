@@ -6,7 +6,7 @@
 
 Hands-On Labs are sets of step-by-step guides that are designed to help you learn how to use key Windows Azure services and features.  Each Lab provides instructions to guide you through the process of developing a complete application.
 
-In this hands-on lab, you will explore the basic elements of a Windows Azure Cloud Service by creating a simple GuestBook application that demonstrates many features of web and worker roles, blob storage, table storage, and queues.
+This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service. Also you will perform server side validations and user authentication using Mobile Services features.
 
 > **Note:** You can download the latest build of the Windows Azure Training Kit which includes a tested version of this HOL from here: http://bit.ly/WindowsAzureTK.
 

@@ -13,14 +13,16 @@ The following is a functional representation of the Mobile Services architecture
 
 _Mobile Services Diagram_
 
-This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service.
+This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service. Also you will perform server side validations and user authentication using Mobile Services features.
 
 <a name="Objectives"></a>
 ### Objectives ###
 
 In this hands-on lab, you will learn how to:
 
-- ...
+- Create a new Mobile service and use it as the backend storage for an HTML app
+- Validate data server-side using Mobile Services Server Scripts feature
+- Authenticate users with different identity providers using Mobile Services
 
 <a name="Prerequisites"></a>
 ### Prerequisites ###
@@ -31,7 +33,7 @@ The following is required to complete this hands-on lab:
 	- On **Windows**: [IIS Express](1).
 	- On **MacOS X**: Python, which should already be installed.
 	- On **Linux**: Python. You must install the latest version of Python.
-- A web browser that supports HTML5.
+- A web browser that supports HTML5
 - A Windows Azure subscription account that has the Windows Azure Mobile Services feature enabled
 
 	>**Note:** If you don't have an account, you can create a free trial account in just a couple of minutes. For details, see [Windows Azure Free Trial](http://aka.ms/WATK-FreeTrial).
@@ -57,8 +59,8 @@ If you are performing this hands-on lab using Windows, you can follow these step
 This hands-on lab includes the following exercises:
 
 1. [Creating Your First Mobile Service](#Exercise1)
-1. [**Validate and Modify Data Using Server Scripts**](#Exercise2)
-1. [Get Started with Auth](#Exercise2)
+1. [Validating Data Using Server Scripts](#Exercise2)
+1. [Getting Started with Authentication](#Exercise3)
 
 Estimated time to complete this lab: **45** minutes.
 
@@ -145,15 +147,15 @@ This downloads the web site files for the sample To do list application that is 
 The final stage of this exercise is to host and run your new app on your local computer.
 
 1. Browse to the location where you saved the compressed project files, expand the files on your computer, and launch one of the following command files from the **server** subfolder, depending on your operating system.
-	- On **Windows**: launch-windows
-	- On **Mac OS X**: launch-mac.command
-	- On **Linux**: launch-linux.sh
+	- On Windows: **launch-windows**
+	- On Mac OS X: **launch-mac.command**
+	- On Linux: **launch-linux.sh**
 
 	> **Note:** On a Windows computer, type `R` when PowerShell asks you to confirm that you want to run the script. Your web browser might warn you to not run the script because it was downloaded from the internet. When this happens, you must request that the browser proceed to load the script.
 
 	This starts a web server on your local computer to host the new app.
 
-1. Open the URL http://localhost:8000/ in a web browser to start the app.
+1. Open the URL [http://localhost:8000/](http://localhost:8000/) in a web browser to start the app.
 
 	![Running the App](Images/running-the-app.png?raw=true "Running the App")
 
@@ -182,7 +184,8 @@ The final stage of this exercise is to host and run your new app on your local c
 	_TodoItems Table Data_
 
 	>**Note:** Mobile Services simplifies the process of storing data in a SQL Database. By default, you don’t need to predefine the schema of tables in your database. Mobile Services automatically adds columns to a table based on the data you insert. To change this dynamic schema behavior, use the Dynamic Schema setting on the Configure tab. It is recommeded that you disable dynamic schema support before publicly releasing your app.
-![dynamic schema](Images/dynamic-schema.png?raw=true "dynamic schema")
+	>
+	> ![dynamic schema](Images/dynamic-schema.png?raw=true "dynamic schema")
 
 <a name="Ex1Task4" />
 ### Task 4 - Exploring your App Code ###
@@ -323,13 +326,13 @@ Now that the mobile service is validating data and sending error responses, you 
 	````
 
 1. Run one of the following command files from the **server** subfolder of the project that you modified when you completed Exercise 1. This starts a web server on your local computer to host the app.
-	-	**launch-windows** (Windows computers)
-	-	**launch-mac.command** (Mac OS X computers)
-	-	**launch-linux.sh** (Linux computers)
+	- On Windows: **launch-windows**
+	- On Mac OS X: **launch-mac.command**
+	- On Linux: **launch-linux.sh**
 
 	> **Note:** On a Windows computer, type `R` when PowerShell asks you to confirm that you want to run the script. Your web browser might warn you to not run the script because it was downloaded from the internet. When this happens, you must request that the browser proceed to load the script.
 
-1.	In a web browser, navigate to http://localhost:8000/, then type text in _Add new task_ and click **Add**. Notice that the operation fails and error handling displays the error response in a dialog.
+1.	In a web browser, navigate to [http://localhost:8000/](http://localhost:8000/), then type text in _Add new task_ and click **Add**. Notice that the operation fails and error handling displays the error response in a dialog.
 
 	![Validation Message](Images/validation-message.png?raw=true "Validation Message")
 	_Validation Message_
@@ -361,7 +364,6 @@ To be able to authenticate users, you must register your app with an identity pr
 	_Getting the Site URL_
 
 3.	Choose a supported identity provider from the list below and follow the steps to register your app with that provider. Remember to make a note of the client identity and secret values generated by the provider using the links below.
-
 	- [Microsoft Account] (http://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-microsoft-authentication/)
 	- [Facebook login](http://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-facebook-authentication/)
 	- [Twitter login] (http://www.windowsazure.com/en-us/develop/mobile/how-to-guides/register-for-twitter-authentication/)
@@ -371,7 +373,7 @@ To be able to authenticate users, you must register your app with an identity pr
 
 4.	Back in the Management Portal, click the **Identity** tab, enter the app identifier and shared secret values obtained from your identity provider, and click **Save**.
 
-	![Identity Settings](images/identity-settings.png?raw=true "Identity Settings")
+	![Identity Settings](Images/identity-settings.png?raw=true "Identity Settings")
 
 	_Identity Settings_
 
@@ -392,17 +394,18 @@ Both your mobile service and your app are now configured to work with your chose
 	_Table Permissions_
 
 3.	Run one of the following command files from the **server** subfolder of the project that you modified when you completed [Exercise 1](#Exercise1). 	This starts a web server on your local computer to host the new app.
-	-	**launch-windows** (Windows computers)
-	-	**launch-mac.command** (Mac OS X computers)
-	-	**launch-linux.sh** (Linux computers)
+	- On Windows: **launch-windows**
+	- On Mac OS X: **launch-mac.command**
+	- On Linux: **launch-linux.sh**
 
 	> **Note:** On a Windows computer, type `R` when PowerShell asks you to confirm that you want to run the script. Your web browser might warn you to not run the script because it was downloaded from the internet. When this happens, you must request that the browser proceed to load the script.
 
-1. Open the URL http://localhost:8000/ in a web browser to start the app. The data fails to load and the _Loading..._ message does not dissapear. This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
+1. Open the URL [http://localhost:8000/](http://localhost:8000/) in a web browser to start the app. The data fails to load and the _Loading..._ message does not disappear. This happens because the app attempts to access Mobile Services as an unauthenticated user, but the _TodoItem_ table now requires authentication.
 
-1.	Optionaly, you can open the script debugger for your web browser and reload the page. Verify that an access denied error occurs.
+1.	Optionally, you can open the script debugger for your web browser and reload the page. Verify that an access denied error occurs.
 
-	![Access is denied Error](images/access-is-denied-error.png?raw=true "Access is denied Error")
+	![Access is denied Error](Images/access-is-denied-error.png?raw=true "Access is denied Error")
+
 	_Access is denied Error_
 
 Next, you will update the app to allow authentication before requesting resources from the mobile service.
@@ -410,7 +413,7 @@ Next, you will update the app to allow authentication before requesting resource
 <a name="Ex1Task3" />
 ###Task 3 - Adding Authentication to the App###
 
-1.	Open the file **index.html** from the app, locate the **H1** element and under it add the following code snippet:
+1.	Open the file **index.html** from the HTML app, locate the **H1** element and under it, add the following code snippet.
 
 	````HTML
 	<div id="logged-in">
@@ -467,9 +470,9 @@ Next, you will update the app to allow authentication before requesting resource
 
 	> **Note:** If you are using an identity provider other than Facebook, change the value passed to the login method above to one of the following: _microsoftaccount, facebook, twitter, or google_.
 
-1.	Go back to the browser where your app is running, and refresh the page. When you are successfully logged in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
+1.	Go back to the browser where your HTML app is running, and refresh the page. When you are successfully logged in, the app should run without errors, and you should be able to query Mobile Services and make updates to data.
 
-	![Logged in with Facebook](images/logged-in-with-facebook.png?raw=true "Logged in with Facebook")
+	![Logged in with Facebook](Images/logged-in-with-facebook.png?raw=true "Logged in with Facebook")
 
 	_Logged in with Facebook_
 
