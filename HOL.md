@@ -65,7 +65,7 @@ This hands-on lab includes the following exercises:
 Estimated time to complete this lab: **45** minutes.
 
 <a name="Exercise1" />
-### Exercise 1: Creating Your First Mobile Service ###
+## Exercise 1: Creating Your First Mobile Service ##
 
 In this exercise use the quick start within the portal to quickly demonstrate the structured storage capability of Windows Azure Mobile services.
 
@@ -254,7 +254,7 @@ In this task you will explore ToDo list application code and see how simple the 
 ---
 
 <a name="Exercise2"/>
-### Exercise 2: Validating Data Using Server Scripts ###
+## Exercise 2: Validating Data Using Server Scripts ##
 
 This exercise shows you how to leverage server scripts in Windows Azure Mobile Services. Server scripts are registered in a mobile service and can be used to perform a wide range of operations on data being inserted and updated, including validation and data modification. In this exercise, you will define and register server scripts that validate and modify data. Because the behavior of server side scripts often affects the client, you will also update your HTML app to take advantage of these new behaviors.
 
@@ -340,7 +340,7 @@ Now that the mobile service is validating data and sending error responses, you 
 ---
 
 <a name="Exercise3"/>
-### Exercise 3: Getting Started with Authentication ###
+## Exercise 3: Getting Started with Authentication ##
 
 This exercise shows you how to authenticate users in Windows Azure Mobile Services from your HTML app. In this exercise, you add authentication to the quickstart project using an identity provider that is supported by Mobile Services. After being successfully authenticated and authorized by Mobile Services, the user ID value is displayed.
 
