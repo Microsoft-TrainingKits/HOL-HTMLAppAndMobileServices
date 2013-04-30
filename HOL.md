@@ -460,7 +460,7 @@ Next, you will update the app to allow authentication before requesting resource
 	// On page init, fetch the data and set up event handlers
 	$(function () {
 		 refreshAuthDisplay();
-		 $('#summary').html('<strong>You must login to access data.</strong>');          
+		 $('#summary').html('<strong>You must login to access data.</strong>');
 		 $("#logged-out button").click(logIn);
 		 $("#logged-in button").click(logOut);
 	});
