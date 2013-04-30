@@ -183,7 +183,7 @@ The final stage of this exercise is to host and run your new app on your local c
 
 	_TodoItems Table Data_
 
-	>**Note:** Mobile Services simplifies the process of storing data in a SQL Database. By default, you don’t need to predefine the schema of tables in your database. Mobile Services automatically adds columns to a table based on the data you insert. To change this dynamic schema behavior, use the Dynamic Schema setting on the Configure tab. It is recommeded that you disable dynamic schema support before publicly releasing your app.
+	>**Note:** Mobile Services simplifies the process of storing data in a SQL Database. By default, you don’t need to predefine the schema of tables in your database. Mobile Services automatically adds columns to a table based on the data you insert. To change this dynamic schema behavior, use the Dynamic Schema setting on the Configure tab. It is recommended that you disable dynamic schema support before publicly releasing your app.
 	>
 	> ![dynamic schema](Images/dynamic-schema.png?raw=true "dynamic schema")
 
