@@ -108,7 +108,7 @@ Follow these steps to create a new mobile service.
 
 	_Specifying Database Settings_
 
-	> **Note:**  When the password that you supply does not meet the minimum requirements or when there is a mismatch, a warning is displayed.  We recommend that you make a note of the administrator login name and password that you specify; you will need this information to reuse the SQL Database instance or the server in the future. You have now created a new mobile service that can be used by your mobile apps.
+	> **Note:** When the password that you supply does not meet the minimum requirements or when there is a mismatch, a warning is displayed. We recommend that you make a note of the administrator login name and password that you specify; you will need this information to reuse the SQL Database instance or the server in the future. You have now created a new mobile service that can be used by your mobile apps.
 
 Wait until the mobile servies is ready. You have now created a new mobile service that can be used by your mobile apps.
 
@@ -131,7 +131,7 @@ In this task you will create a new HTML app that is connected to your mobile ser
 
 	_New Mobile Service_
 
-3.  Three steps are displayed to create and host an HTML app connected to your mobile service. Click **Create TodoItems table** to create a table to store app data.
+3. Three steps are displayed to create and host an HTML app connected to your mobile service. Click **Create TodoItems table** to create a table to store app data.
 
 	![Creating a New HTML App](Images/creating-a-new-html-app.png?raw=true "Creating a New HTML App")
 
@@ -146,7 +146,7 @@ This downloads the web site files for the sample To do list application that is 
 
 The final stage of this exercise is to host and run your new app on your local computer.
 
-1. Browse to the location where you saved the compressed project files, expand the files on your computer, and launch one of the following command files from the **server** subfolder, depending on your operating system.
+1. Browse to the location where you saved the compressed project files, extract the files on your computer, and launch one of the following command files from the **server** subfolder, depending on your operating system.
 	- On Windows: **launch-windows**
 	- On Mac OS X: **launch-mac.command**
 	- On Linux: **launch-linux.sh**
@@ -190,9 +190,9 @@ The final stage of this exercise is to host and run your new app on your local c
 <a name="Ex1Task4" />
 ### Task 4 - Exploring your App Code ###
 
-In this task you will explore ToDo list application code and see how simple the Windows Azure Mobile Services Client SDK makes it to interact with Windows Azure Mobile Services.
+In this task you will explore To do list application code and see how simple the Windows Azure Mobile Services Client SDK makes it to interact with Windows Azure Mobile Services.
 
-1. Open **index.html** using a text editor. The files is located in the folder where you've expanded the application files.
+1. Open **index.html** using a text editor. The file is located in the folder where you've extracted the application files. The file imports **MobileServices.Web-1.0.0.min.js** from your mobile services web page and the **app.js** file that is located in the same folder of **index.hml**
 	
 	````HTML
 	<script src='//ajax.aspnetcdn.com/ajax/jQuery/jquery-1.9.1.min.js'></script>
@@ -212,7 +212,7 @@ In this task you will explore ToDo list application code and see how simple the 
 	}
 	````
 
-1. Let's see to see how the mobile service client is then used for Inserts, Updates, Query operations. The **where()** function creates a query that is executed with the **read()** operation.
+1. Let's see how the mobile service client is then used for Inserts, Updates, Query operations. The **where()** function creates a query that is executed with the **read()** operation.
 
 	````JavaScript
    function refreshTodoItems() {
@@ -325,7 +325,7 @@ Now that the mobile service is validating data and sending error responses, you 
 	});
 	````
 
-1. Run one of the following command files from the **server** subfolder of the project that you modified when you completed Exercise 1. This starts a web server on your local computer to host the app.
+1. Run one of the following command files from the **server** subfolder of the project that you modified when you completed [Exercise 1](#Exercise1). This starts a web server on your local computer to host the app. If the command file is already opened, close it before executing the command again.
 	- On Windows: **launch-windows**
 	- On Mac OS X: **launch-mac.command**
 	- On Linux: **launch-linux.sh**
@@ -393,7 +393,7 @@ Both your mobile service and your app are now configured to work with your chose
 
 	_Table Permissions_
 
-3.	Run one of the following command files from the **server** subfolder of the project that you modified when you completed [Exercise 1](#Exercise1). 	This starts a web server on your local computer to host the new app.
+3.	Run one of the following command files from the **server** subfolder of the project that you modified when you completed [Exercise 1](#Exercise1). This starts a web server on your local computer to host the new app. If the command file is already opened, close it before executing the command again.
 	- On Windows: **launch-windows**
 	- On Mac OS X: **launch-mac.command**
 	- On Linux: **launch-linux.sh**
