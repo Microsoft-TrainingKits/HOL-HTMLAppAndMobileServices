@@ -12,7 +12,7 @@
   <Description>This hands-on lab shows you how to add a cloud-based backend service to an HTML app using Windows Azure Mobile Services. You will create both a new mobile service and a simple To do list app that stores app data in the new mobile service. Also you will perform server side validations and user authentication using Mobile Services features.</Description>
   <Document ConversionType="Html">.\HOL.md</Document>
   <Title>Getting Started with Windows Azure Mobile Services and HTML Applications</Title>
-  <Version>1.0.0</Version>
+  <Version>1.0.1</Version>
   <Source>.\Source</Source>
   <DependencyChecker>.\source\Setup\Dependencies.depi</DependencyChecker>
   <CustomProperties>
